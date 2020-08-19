@@ -31,7 +31,7 @@ namespace CoTale
         {
             var myMessage = new SendGridMessage();
             myMessage.AddTo(message.Destination);
-            myMessage.From = new System.Net.Mail.MailAddress("Joe@contoso.com", "Joe S.");
+            myMessage.From = new System.Net.Mail.MailAddress("azure_f58ed3c83c51d55e22f4fc31a413639b@azure.com", "CoTale");
             myMessage.Subject = message.Subject;
             myMessage.Text = message.Body;
             myMessage.Html = message.Body;
