@@ -1,3 +1,9 @@
 {
-  "dependencies": {}
+  "dependencies": {
+    "mssql2": {
+      "type": "mssql.azure",
+      "connectionId": "cotale-adv-reg",
+      "secretStore": "LocalSecretsFile"
+    }
+  }
 }
