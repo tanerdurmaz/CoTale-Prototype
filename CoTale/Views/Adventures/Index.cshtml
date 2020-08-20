@@ -1,0 +1,50 @@
+﻿@model IEnumerable<CoTale.Models.Adventure>
+
+@{
+    ViewBag.Title = "Next";
+    int pid = 0;
+}
+
+<h2>Next</h2>
+
+<p>
+    @{
+        if (pid != 0)
+        {
+            <input type="button" value="Prev" onclick="location.href='@Url.Action("Prev", "Adventures", new { id = pid })'" />
+        }
+    }
+    <input type="button" value="Create" onclick="location.href = '@Url.Action("Create", "Adventures", new { id = pid })'" />
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Title)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Price)
+    </td>
+    <td>
+        <input type="button" value="Next" onclick="location.href='@Url.Action("Next", "Adventures", new { id = item.ID })'" />
+    </td>
+    <td>
+        <input type="button" value="Create" onclick="location.href='@Url.Action("Create", "Adventures", new { id = item.ID })'" />
+    </td>
+
+</tr>
+    }
+
+</table>

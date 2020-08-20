@@ -1,0 +1,98 @@
+﻿
+@model CoTale.Models.colAdventure
+
+@{
+    ViewBag.Title = "Next";
+    int pid = Request.Url.Segments[3].AsInt();
+    int prevBsize = @Model.Adventures.Count() * 40;
+    int storysize = 0;
+    if (prevBsize == 0)
+        prevBsize = 40;
+    //var allStory = @Html.Raw(Json.Encode(ViewData["stories"]));
+    var allStory = Json.Decode(Json.Encode(ViewData["stories"]));
+    var brief = Json.Decode(Json.Encode(ViewData["brief"]));
+}
+
+<script>
+    function hide() {
+        var x = document.getElementById("storydiv");
+        var y = document.getElementById("brief");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+            y.style.display = "none";
+        } else {
+            x.style.display = "none";
+            y.style.display = "block";
+        }
+    }
+</script>
+
+<h2>Adventures</h2>
+
+<table class="table">
+
+    <td>
+        <div id="storydiv" style="display:none">
+            @foreach (var item in @allStory)
+            {
+                <p>  @item </p>
+            }
+        </div>
+        <div id="briefdiv">
+            @foreach (var item in @brief)
+            {
+                <p>  @item </p>
+            }
+        </div>
+        <button onclick="hide()">show all</button>
+
+        <div>
+            @using (Html.BeginForm("Create", "Adventures", new { id = pid }))
+            {
+                @Html.AntiForgeryToken()
+
+                @Html.EditorFor(model => model.Adventure.Title, new { htmlAttributes = new { @class = "form-control" , @style = "border: none; color: rgb(255, 255, 255); background-color: rgb(59, 59, 59); font - family: HelveticaNeueMedium; font - size: 20px; line - height: 24px; padding: 9px 12px 12px; width: 1900px; height: 55px;" } } )
+                @Html.ValidationMessageFor(model => model.Adventure.Title, "", new { @class = "text-danger" })
+
+                <input type="submit" id="btnSubmit" name="submit" value="Create" style="height:40px; width:1900px; text-align: center"
+                       onmouseover="this.style.background = '#00ffff'; this.style.color = '#000000'"
+                       onmouseout="this.style.background = '#000000'; this.style.color = '#ffffff'" />
+            }
+
+        </div>
+
+
+        <p>
+            @{
+                if (pid != 0)
+                {
+                    <input type="button" value="Prev" style="height:@(prevBsize +"px")" ; width:40px; text-align: center"
+                           onmouseover="this.style.background = '#00ffff'; this.style.color = '#000000'"
+                           onmouseout="this.style.background = '#000000'; this.style.color = '#ffffff'"
+                           onclick="location.href='@Url.Action("Prev", "Adventures", new { id = pid })'" />
+                }
+            }
+
+        </p>
+        @foreach (var item in Model.Adventures)
+        {
+
+
+            <input type="button" value="@item.Title" style="background-color: black; height: 40px; width: 1800px; float:right;"
+                   onmouseover="this.style.background = '#00ffff'; this.style.color = '#000000'"
+                   onmouseout="this.style.background = '#000000'; this.style.color = '#ffffff'"
+                   onclick="location.href='@Url.Action("Next", "Adventures", new { id = item.ID })'" />
+
+
+
+            <!--
+            <td>
+                <input type="button" value="Delete" onclick="location.href='@Url.Action("Delete", "Adventures", new { id = item.ID })'" />
+            </td>
+            -->
+        }
+
+    </td>
+
+
+</table>

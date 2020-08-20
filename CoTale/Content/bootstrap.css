@@ -1082,19 +1082,21 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.42857143;
-  color: #333333;
-  background-color: #fff;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #fff;
+    background-color: #040000;
 }
 input,
 button,
 select,
 textarea {
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
+    font-family: font-family: HelveticaNeueMedium;
+    font-size: 16px;
+    line-height: inherit;
+    background-color: #000000;
+    border: hidden;
 }
 a {
   color: #337ab7;
@@ -1392,7 +1394,7 @@ a.bg-success:focus {
 a.bg-info:hover,
 a.bg-info:focus {
   background-color: #afd9ee;
-}
+}1270
 .bg-warning {
   background-color: #fcf8e3;
 }
@@ -1598,7 +1600,7 @@ pre code {
 }
 @media (min-width: 1200px) {
   .container {
-    width: 1170px;
+    width: 1900px;
   }
 }
 .container-fluid {
@@ -2383,7 +2385,7 @@ th {
   padding: 8px;
   line-height: 1.42857143;
   vertical-align: top;
-  border-top: 1px solid #ddd;
+  /*border-top: 1px solid #ddd;*/
 }
 .table > thead > tr > th {
   vertical-align: bottom;
