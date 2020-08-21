@@ -15,7 +15,7 @@ namespace CoTale.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "collective story telling co-tale.";
 
             return View();
         }
