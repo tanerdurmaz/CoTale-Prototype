@@ -1,7 +1,7 @@
 {
   "dependencies": {
-    "mssql2": {
-      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroup')]/providers/Microsoft.Sql/servers/cotaledbserver/databases/CoTale_db_mix",
+    "mssql1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroup')]/providers/Microsoft.Sql/servers/cotale-v2dbserver/databases/CoTale_db_v2",
       "type": "mssql.azure",
       "connectionId": "cotale-adv-reg",
       "secretStore": "AzureAppSettings"
