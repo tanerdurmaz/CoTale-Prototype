@@ -2,7 +2,7 @@
   "dependencies": {
     "mssql1": {
       "type": "mssql.local",
-      "connectionId": "local-db",
+      "connectionId": "cotale-local",
       "secretStore": "LocalSecretsFile"
     }
   }
