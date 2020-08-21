@@ -205,6 +205,10 @@
     <Compile Include="Migrations\202008202100512_advnture+registre.designer.cs">
       <DependentUpon>202008202100512_advnture+registre.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202008211844029_trying tog oline.cs" />
+    <Compile Include="Migrations\202008211844029_trying tog oline.designer.cs">
+      <DependentUpon>202008211844029_trying tog oline.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Adventure.cs" />
@@ -299,6 +303,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202008202100512_advnture+registre.resx">
       <DependentUpon>202008202100512_advnture+registre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008211844029_trying tog oline.resx">
+      <DependentUpon>202008211844029_trying tog oline.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
